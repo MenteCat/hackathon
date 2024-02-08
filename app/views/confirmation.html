@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Application complete",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+
+      <p>
+        You're eligible for a Public Dance Licence
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        We will forward you a list of dancing venues to show off your moves!".
+      </p>
+
+      <p>
+        <a href="https://www.youtube.com/watch?v=sn8KYD1Vco0">
+          Can start by preparing with this dance
+        </a> 
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

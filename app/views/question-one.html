@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+ 
+
+      <form class="form" action="/dance-level-answers" method="post">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            name: "dance-level",
+            value: data['dance-level'],
+            fieldset: {
+              legend: {
+                text: "How long have you been dancing?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "Less than 1 year",
+                text: "Less than 1 year"
+              },
+              {
+                value: "1 to 2 years",
+                text: "1 to 2 years"
+              },
+              {
+                value: "more than 2 years",
+                text: "more than 2 years"
+              }      
+            ]
+          }) }}
+
+ 
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
